@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D77C4A;
+}
+
+header {
+    background-color: #8FBF8F; 
+    color: #D77C4A;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.producto {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    opacity: 0; /* Oculto inicialmente */
+    transform: translateY(20px); /* Posición inicial desplazada */
+    animation: fadeIn 0.5s ease forwards;
+}
+.producto img {
+    width: 200px; 
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 4px;
+}
+.producto h2 {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.precio {
+    font-size: 1.1em;
+    color: #FF1493; /* Rosa fucsia */
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.boton-regreso {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: #00b8d8; /* Rosa fucsia */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #00d9ff; /* Color más claro al pasar el mouse */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Posición final */
+    }
+}
+
+/* Añadimos un pequeño retraso a cada elemento para un efecto en cascada */
+.producto:nth-child(1) { animation-delay: 0.1s; }
+.producto:nth-child(2) { animation-delay: 0.2s; }
+.producto:nth-child(3) { animation-delay: 0.3s; }
+.producto:nth-child(4) { animation-delay: 0.4s; }

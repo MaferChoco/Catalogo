@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+  background-color: #17324f;
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  overflow-y: auto; /* Permite el desplazamiento vertical */
+
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Cambia de space-between a flex-start */
+  padding: 20px;
+  gap: 20px;
+  width: 100%; /* Añade espacio entre los elementos */
+}
+
+.main-container h1 {
+  color: #ffd700;
+}
+
+pre {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #00ff0a;
+}
+
+pre span:first-child {
+  color: rgb(255, 255, 0);
+}
+
+pre span:last-child {
+  color: #795548;
+}
+
+.snow {
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: -100px;
+}
+
+.snow-floor {
+  width: 100%;
+  height: 3%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.title {
+  color: #fff;
+  font-family: "Lobster";
+  font-weight: lighter;
+}
+
+@keyframes fall {
+  0% {
+    top: -100px;
+  }
+
+  100% {
+    top: 100vh;
+  }
+}
+
+/* Sección de productos */
+
+.products-title {
+  font-family: "Lobster", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.products-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%; /* Asegura que los productos ocupen el 100% del ancho */
+  padding-bottom: 20px; 
+}
+
+.product-card {
+  background-color: #244a68;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  padding: 15px;
+  width: 250px;
+  max-width: 100%;
+  flex: 1;
+  margin: 10px;
+}
+
+/* Nombre y precio de los productos */
+.product-name {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin-bottom: 15px;
+}
+
+/* Botones generales */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-family: "Lobster", cursive;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+/* Botón Comprar */
+.btn-comprar {
+  background-color: #4caf50; /* Verde */
+  color: white;
+}
+
+.btn-comprar:hover {
+  background-color: #45a049; /* Verde oscuro */
+  transform: scale(1.05);
+}
+
+/* Botón Regresar */
+.btn-regresar {
+  background-color: #f44336; /* Rojo */
+  color: white;
+  margin-top: 20px;
+}
+
+.btn-regresar:hover {
+  background-color: #e53935; /* Rojo oscuro */
+  transform: scale(1.05);
+}
+
+/* Estilo de la sección de productos */
+/* Contenedor de productos */
+.products-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta el tamaño de los productos */
+  gap: 20px;
+  width: 90%;
+  margin: 20px auto;
+  padding-bottom: 50px; /* Añadir un padding para evitar que se corte el contenido */
+  overflow-x: hidden;
+}
+
+.product {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden; /* Evita desbordamientos */
+  max-width: 300px; /* Limita el ancho máximo */
+  margin: 0 auto; /* Centra los contenedores más pequeños */
+}
+
+/* Imagen de productos */
+.product-image {
+  width: 100%; /* Ocupa el ancho completo del contenedor */
+  height: 200px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+  border-radius: 10px 10px 0 0; /* Bordes redondeados en la parte superior */
+  margin-bottom: 10px; /* Espacio debajo de la imagen */
+}
+
+.product h2 {
+  color: #17324f;
+}
+
+.product p {
+  color: #555;
+  margin: 10px 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .products-title {
+    font-size: 2rem;
+  }
+
+  .product-card {
+    width: 100%; /* Los productos ocupan el 100% del ancho en pantallas pequeñas */
+    margin: 10px 0;
+  }
+
+  .product-image {
+    height: 150px; /* Reduce la altura de la imagen para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .products-title {
+    font-size: 1.5rem;
+  }
+
+  .product-card {
+    width: 100%; /* Los productos ocupan el 100% del ancho en pantallas más pequeñas */
+    margin: 10px 0;
+  }
+
+  .product-image {
+    height: 120px; /* Reduce aún más la altura de la imagen */
+  }
+
+  .btn {
+    font-size: 0.9rem; /* Reduce el tamaño de los botones en pantallas pequeñas */
+    padding: 8px 16px;
+  }
+}
